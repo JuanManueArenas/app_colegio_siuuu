@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import ttk
 from tkinter import messagebox
 
 ventana_principal = Tk()
@@ -13,6 +14,11 @@ def borrar():
     messagebox.showinfo("Datos", "Los datos serán borrados")
     caja_informacion.set("")
     caja_informacion.delete("1.0","end")
+
+
+
+
+       
 
 # abrir toplevel a notas
 def abrir_toplevel_notas():
@@ -29,57 +35,95 @@ def abrir_toplevel_notas():
     frame_notas.place(x=0, y=0)
 
     frame_madri = Frame(toplevel_notas)
-    frame_madri.config(bg="gold2", width=450    , height=450)
+    frame_madri.config(bg="DodgerBlue3", width=450    , height=450)
     frame_madri.place(x=0, y=0)
     
+    
+    
+    #todo lo utilizado
+    
     lineas_texto_toplevel = Label(toplevel_notas, text = "Procedimental 30%:")
-    lineas_texto_toplevel .config(bg ="gold2", fg="white", font=("Arial", 14))
-    lineas_texto_toplevel .place(x=45, y=25)
+    lineas_texto_toplevel .config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
+    lineas_texto_toplevel .place(x=45, y=65)
     
     lineas_texto_toplevel = Label(toplevel_notas, text = "Cognitivo 30%:")
-    lineas_texto_toplevel.config(bg ="gold2", fg="white", font=("Arial", 14))
-    lineas_texto_toplevel.place(x=45, y=65)
+    lineas_texto_toplevel.config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
+    lineas_texto_toplevel.place(x=45, y=105)
     
     lineas_texto_toplevel = Label(toplevel_notas, text = "Bimestral 20%:")
-    lineas_texto_toplevel.config(bg ="gold2", fg="white", font=("Arial", 14))
-    lineas_texto_toplevel.place(x=45, y=105)
-
-    lineas_texto_toplevel = Label(toplevel_notas, text = "Autoevaluacion 10%:")
-    lineas_texto_toplevel.config(bg ="gold2", fg="white", font=("Arial", 14))
+    lineas_texto_toplevel.config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
     lineas_texto_toplevel.place(x=45, y=145)
 
-    lineas_texto_toplevel = Label(toplevel_notas, text = "Actitudinal 10%:")
-    lineas_texto_toplevel.config(bg ="gold2", fg="white", font=("Arial", 14))
+    lineas_texto_toplevel = Label(toplevel_notas, text = "Autoevaluacion 10%:")
+    lineas_texto_toplevel.config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
     lineas_texto_toplevel.place(x=45, y=185)
 
-    caja_informacion_toplevel = Entry(toplevel_notas)
-    caja_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=10)
-    caja_informacion_toplevel.focus_set()
-    caja_informacion_toplevel.place(x=250,y=25)
+    lineas_texto_toplevel = Label(toplevel_notas, text = "Actitudinal 10%:")
+    lineas_texto_toplevel.config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
+    lineas_texto_toplevel.place(x=45, y=225)
 
-    caja_informacion_toplevel = Entry(toplevel_notas)
-    caja_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=10)
-    caja_informacion_toplevel.focus_set()
-    caja_informacion_toplevel.place(x=250,y=65)
+    proce_informacion_toplevel = Entry(toplevel_notas)
+    proce_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=17)
+    proce_informacion_toplevel.focus_set()
+    proce_informacion_toplevel.place(x=250,y=65)
+    
+    cog_informacion_toplevel = Entry(toplevel_notas)
+    cog_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=17)
+    cog_informacion_toplevel.focus_set()
+    cog_informacion_toplevel.place(x=250,y=105)
 
-    caja_informacion_toplevel = Entry(toplevel_notas)
-    caja_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=10)
-    caja_informacion_toplevel.focus_set()
-    caja_informacion_toplevel.place(x=250,y=105)
+    bi_informacion_toplevel = Entry(toplevel_notas)
+    bi_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=17)
+    bi_informacion_toplevel.focus_set()
+    bi_informacion_toplevel.place(x=250,y=145)
 
-    caja_informacion_toplevel = Entry(toplevel_notas)
-    caja_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=10)
-    caja_informacion_toplevel.focus_set()
-    caja_informacion_toplevel.place(x=250,y=145)
+    ac_informacion_toplevel = Entry(toplevel_notas)
+    ac_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=17)
+    ac_informacion_toplevel.focus_set()
+    ac_informacion_toplevel.place(x=250,y=185)
 
-    caja_informacion_toplevel = Entry(toplevel_notas)
-    caja_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=10)
-    caja_informacion_toplevel.focus_set()
-    caja_informacion_toplevel.place(x=250,y=185)
+    aut_informacion_toplevel = Entry(toplevel_notas)
+    aut_informacion_toplevel.config(bg="white", fg="Black", font=("Times New Roman", 15), width=17)
+    aut_informacion_toplevel.focus_set()
+    aut_informacion_toplevel.place(x=250,y=225)
+
+    #lista desplegable
+    lista= ttk.Combobox(toplevel_notas,state="reandoly")
+    lista.place(x=250, y=25)
+    lista["values"]=("Quimica", "Fisica", "Sistemas", "Trigonometria", "Ingles")
+    lista.current(0)
+    
+    lineas_texto_toplevel = Label(toplevel_notas, text = "Seleccione la materia:")
+    lineas_texto_toplevel .config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
+    lineas_texto_toplevel .place(x=45, y=25)
+  
 
 
+    #procedimiento
+    def Convertir():
+        messagebox.showinfo("Nota Difinitiva", "Operacion realizada")
+        proce_informacion_def = float(proce_informacion_toplevel.get())
+        cog_informacion_def = float(cog_informacion_toplevel.get())
+        aut_informacion_def = float(bi_informacion_toplevel.get())
+        ac_informacion_def = float(ac_informacion_toplevel.get())
+        bi_informacion_def = float(aut_informacion_toplevel.get())
 
+        entry_not_final = (0.3*proce_informacion_def) + (0.3*cog_informacion_def) + (0.1*ac_informacion_def) + (0.1*aut_informacion_def) + (0.2*bi_informacion_def)
 
+        if entry_not_final < 30:
+            messagebox.showinfo("Resultado", "El alumno a aprobado la asignatura :) "+str(entry_not_final))
+        else:
+            messagebox.showinfo("Resultado", "El alumno a reprobado la asignatura ;() "+str(entry_not_final))
+
+    #   boton para sumar
+    lineas_hola = Button(toplevel_notas,text = "Convertir", command= Convertir)
+    lineas_hola.config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
+    lineas_hola.place(x=200, y=300)
+
+#   boton para sumar
+    lineas_hola = Button(frame_madri,command= Convertir)
+    lineas_hola.config(bg ="DodgerBlue3", fg="white", font=("Arial", 14))
+    lineas_hola.place(x=200, y=300)
 #entrada       
 frame_entrada = Frame(ventana_principal)
 frame_entrada.config(bg="DodgerBlue3" , width=1000, height=500)
